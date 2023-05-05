@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <h1>Динамічне заповнення списку</h1>
+    <form name="sel">
+      <!-- Порожній список посилань-->
+      <select name="listOfLinks"></select>
+      <!-- Кнопка активізації вибраного посилання-->
+      <input
+        type="button"
+        value="Перехід"
+        onClick="window.location.href=document.links[sel.listOfLinks.selectedIndex];"
+      />
+    </form>
+    <a href="https://rozetka.com.ua/"></a>
+    <a href="https://allo.ua/"></a>
+    <a href="https://www.olx.ua/"></a>
+    <a href="https://www.zieit.edu.ua/"></a>
+    <script>
+      for (i = 0; i < document.links.length; i++) {
+        document.sel.listOfLinks.options[i] = new Option(
+          document.links[i],
+          i,
+          false,
+          false
+        );
+      }
+
+      document.sel.listOfLinks.selectedIndex = 0;
+    </script>
+  </body>
+</html>

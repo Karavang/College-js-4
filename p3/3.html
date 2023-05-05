@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+ <meta http-equiv=Content-Type content="text/html;charset=utf-8">
+ <script>
+ function btnClick2()
+{
+ let sI=document.test2.item.selectedIndex;
+ console.log(sI)
+ let txt="";
+ txt=alert("Запропоновано "+document.test2.item.length+" напоїв"+
+ "\nВибраний "+document.test2.item.options[sI].text+
+ " (value="+document.test2.item.options[sI].value+
+ ", index="+document.test2.item.options[sI].index+")");
+ if(document.test2.item.options[sI].defaultSelected)
+{
+    txt="Цей напій вибирається за замовчуванням."
+ alert(txt);
+}
+}
+ </script>
+</head>
+<body>
+<H1>Робота з готовим списком</H1>
+<FORM NAME="test2">
+ <SELECT NAME="item" SIZE=5>
+ <OPTION VALUE="tea" SELECTED>Чай
+ <OPTION VALUE="coffee">Кава
+ <OPTION VALUE="milk">Молоко
+ <OPTION VALUE="cocoa">Какао
+ <OPTION VALUE="juice">Сік
+ </SELECT>
+ <INPUT TYPE="button" VALUE="Нехай кава"
+ onClick="test2.item.options[1].selected=true;">
+ <INPUT TYPE="button" VALUE="Подивимось"
+ onClick="btnClick2();">
+</FORM>
+</body>
+</html>
